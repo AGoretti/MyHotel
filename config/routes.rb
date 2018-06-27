@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bedrooms
   resources :hotels
   root to: 'visitors#index'
   devise_for :users
