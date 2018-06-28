@@ -2,9 +2,8 @@ class CreateHotels < ActiveRecord::Migration[5.2]
   def change
     create_table :hotels do |t|
       t.string :name
-      t.text :adress
-      t.text :descrition
-      t.float :rating
+      t.text :location
+      t.float :rank
 
       t.timestamps
     end

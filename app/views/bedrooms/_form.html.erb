@@ -1,41 +1,32 @@
-<%= form_for @bedroom, :html => { :class => "form-horizontal bedroom" } do |f| %>
+<%= form_with(model: bedroom, local: true) do |form| %>
+  <% if bedroom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bedroom.errors.count, "error") %> prohibited this bedroom from being saved:</h2>
 
-  <% if @bedroom.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@bedroom.errors.count, "error") %> prohibited this bedroom from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @bedroom.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+      <ul>
+      <% bedroom.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :type, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :type, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:type) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :description, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:description) %>
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
   </div>
 
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                bedrooms_path, :class => 'btn btn-default' %>
-    </div>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= form.label :hotel_id %>
+    <%= form.text_field :hotel_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

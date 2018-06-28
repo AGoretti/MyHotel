@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  adress: MyText
-  descrition: MyText
-  rating: 1.5
+  location: MyText
+  rank: 1.5
 
 two:
   name: MyString
-  adress: MyText
-  descrition: MyText
-  rating: 1.5
+  location: MyText
+  rank: 1.5

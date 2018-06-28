@@ -1,5 +1,5 @@
-<%- model_class = Hotel -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
-</div>
-<%= render :partial => 'form' %>
+<h1>New Hotel</h1>
+
+<%= render 'form', hotel: @hotel %>
+
+<%= link_to 'Back', hotels_path %>

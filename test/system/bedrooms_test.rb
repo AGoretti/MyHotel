@@ -14,8 +14,9 @@ class BedroomsTest < ApplicationSystemTestCase
     visit bedrooms_url
     click_on "New Bedroom"
 
+    fill_in "Category", with: @bedroom.category
     fill_in "Description", with: @bedroom.description
-    fill_in "Type", with: @bedroom.type
+    fill_in "Hotel", with: @bedroom.hotel_id
     click_on "Create Bedroom"
 
     assert_text "Bedroom was successfully created"
@@ -26,8 +27,9 @@ class BedroomsTest < ApplicationSystemTestCase
     visit bedrooms_url
     click_on "Edit", match: :first
 
+    fill_in "Category", with: @bedroom.category
     fill_in "Description", with: @bedroom.description
-    fill_in "Type", with: @bedroom.type
+    fill_in "Hotel", with: @bedroom.hotel_id
     click_on "Update Bedroom"
 
     assert_text "Bedroom was successfully updated"

@@ -14,10 +14,9 @@ class HotelsTest < ApplicationSystemTestCase
     visit hotels_url
     click_on "New Hotel"
 
-    fill_in "Adress", with: @hotel.adress
-    fill_in "Descrition", with: @hotel.descrition
+    fill_in "Location", with: @hotel.location
     fill_in "Name", with: @hotel.name
-    fill_in "Rating", with: @hotel.rating
+    fill_in "Rank", with: @hotel.rank
     click_on "Create Hotel"
 
     assert_text "Hotel was successfully created"
@@ -28,10 +27,9 @@ class HotelsTest < ApplicationSystemTestCase
     visit hotels_url
     click_on "Edit", match: :first
 
-    fill_in "Adress", with: @hotel.adress
-    fill_in "Descrition", with: @hotel.descrition
+    fill_in "Location", with: @hotel.location
     fill_in "Name", with: @hotel.name
-    fill_in "Rating", with: @hotel.rating
+    fill_in "Rank", with: @hotel.rank
     click_on "Update Hotel"
 
     assert_text "Hotel was successfully updated"

@@ -17,7 +17,7 @@ class BedroomsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create bedroom" do
     assert_difference('Bedroom.count') do
-      post bedrooms_url, params: { bedroom: { description: @bedroom.description, type: @bedroom.type } }
+      post bedrooms_url, params: { bedroom: { category: @bedroom.category, description: @bedroom.description, hotel_id: @bedroom.hotel_id } }
     end
 
     assert_redirected_to bedroom_url(Bedroom.last)
@@ -34,7 +34,7 @@ class BedroomsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update bedroom" do
-    patch bedroom_url(@bedroom), params: { bedroom: { description: @bedroom.description, type: @bedroom.type } }
+    patch bedroom_url(@bedroom), params: { bedroom: { category: @bedroom.category, description: @bedroom.description, hotel_id: @bedroom.hotel_id } }
     assert_redirected_to bedroom_url(@bedroom)
   end
 
