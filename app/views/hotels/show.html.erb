@@ -10,6 +10,14 @@
   <dd><%= @hotel.location %></dd>
   <dt><strong><%= model_class.human_attribute_name(:rank) %>:</strong></dt>
   <dd><%= @hotel.rank %></dd>
+
+
+  <%@hotel.bedrooms.each do |t| %>
+
+  <%end%>
+
+</dl>
+
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
