@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_28_163114) do
+ActiveRecord::Schema.define(version: 2018_06_30_032513) do
 
   create_table "bedrooms", force: :cascade do |t|
     t.string "category"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 2018_06_28_163114) do
     t.integer "hotel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "foto_file_name"
+    t.string "foto_content_type"
+    t.integer "foto_file_size"
+    t.datetime "foto_updated_at"
     t.index ["hotel_id"], name: "index_bedrooms_on_hotel_id"
   end
 
@@ -27,6 +31,10 @@ ActiveRecord::Schema.define(version: 2018_06_28_163114) do
     t.float "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "foto_file_name"
+    t.string "foto_content_type"
+    t.integer "foto_file_size"
+    t.datetime "foto_updated_at"
   end
 
   create_table "ratings", force: :cascade do |t|

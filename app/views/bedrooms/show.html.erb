@@ -12,7 +12,7 @@
   <dd><%= @bedroom.hotel.name %></dd>
 
 </dl>
-
+<%= image_tag @bedroom.foto.url(:medium) %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               bedrooms_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
