@@ -9,7 +9,8 @@
       <th><%= model_class.human_attribute_name(:category) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:hotel_id) %></th>
-
+        <th><%= model_class.human_attribute_name(:price) %></th>
+          <th><%= model_class.human_attribute_name(:telephone) %></th>
 
 
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -24,8 +25,9 @@
         <td><%= bedroom.category %></td>
         <td><%= bedroom.description %></td>
         <td><%= bedroom.hotel.name %></td>
-        <td><%=l bedroom.created_at %></td>
-
+        <td><%=bedroom.created_at %></td>
+        <td><%=bedroom.telephone %></td>
+        <td><%=bedroom.price %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       bedroom_path(bedroom), :class => 'btn btn-default btn-xs' %>

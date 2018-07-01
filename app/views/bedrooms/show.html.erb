@@ -10,6 +10,10 @@
   <dd><%= @bedroom.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:hotel_id) %>:</strong></dt>
   <dd><%= @bedroom.hotel.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @bedroom.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telephone) %>:</strong></dt>
+  <dd><%= @bedroom.telephone %></dd>
 
 </dl>
 <%= image_tag @bedroom.foto.url(:medium) %>
