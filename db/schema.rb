@@ -33,10 +33,6 @@ ActiveRecord::Schema.define(version: 2018_07_01_023438) do
     t.float "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "foto_file_name"
-    t.string "foto_content_type"
-    t.integer "foto_file_size"
-    t.datetime "foto_updated_at"
   end
 
   create_table "ratings", force: :cascade do |t|

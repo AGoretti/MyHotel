@@ -14,8 +14,21 @@
                     <%=image_tag"fundo.jpg"%>
                   </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h3>Hotel: Demostração</h3>
+                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
+                      <p>Preço: $200</p>
+                      </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <a class="lightbox" href="#">
+                    <%=image_tag"fundo.jpg"%>
+                  </a>
+                    <div class="caption">
+                      <h3>Hotel: Demostração</h3>
+                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
+                      <p>Preço: $200</p>
                     </div>
                 </div>
             </div>
@@ -25,8 +38,9 @@
                     <%=image_tag"fundo.jpg"%>
                   </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h3>Hotel: Demostração</h3>
+                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
+                      <p>Preço: $200</p>
                     </div>
                 </div>
             </div>
@@ -36,8 +50,9 @@
                     <%=image_tag"fundo.jpg"%>
                   </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h3>Hotel: Demostração</h3>
+                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
+                      <p>Preço: $200</p>
                     </div>
                 </div>
             </div>
@@ -47,19 +62,9 @@
                     <%=image_tag"fundo.jpg"%>
                   </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <a class="lightbox" href="#">
-                    <%=image_tag"fundo.jpg"%>
-                  </a>
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h3>Hotel: Demostração</h3>
+                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
+                      <p>Preço: $200</p>
                     </div>
                 </div>
             </div>
@@ -69,20 +74,23 @@
                       <%=image_tag"fundo.jpg"%>
                     </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h3>Hotel: Demostração</h3>
+                        <p>Descrição: um bom hotel para passar os dias de ferias</p>
+                        <p>Preço: $200</p>
                     </div>
                 </div>
             </div>
             <% @bedrooms.each do |bedroom| %>
             <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <a class="lightbox" href="#">
+                <a class="lightbox" href="<%=bedroom_path(bedroom)%>" >
                   <%= image_tag bedroom.foto.url %>
                 </a>
                 <div class="caption">
-                    <h3><%=bedroom.hotel.name %></h3>
-                    <p> <%= bedroom.description %> </p>
+                    <h3><%= "Hotel: "+ bedroom.hotel.name %></h3>
+                    <p> <%= "Descição: " +bedroom.description %> </p>
+                    <p> <%= "Preço: $"+ bedroom.price.to_s %> </p>
+
                 </div>
             </div>
             </div>
