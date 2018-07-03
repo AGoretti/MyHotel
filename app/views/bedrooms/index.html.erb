@@ -12,7 +12,10 @@
       <th><%= model_class.human_attribute_name(:price) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
 
+      <% unless user_signed_in? %>
+        <% else %>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <%end%>
     </tr>
   </thead>
   <tbody>
