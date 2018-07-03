@@ -28,6 +28,9 @@
         <td><%=bedroom.created_at %></td>
 
         <td>
+          <% unless user_signed_in? %>
+            <% else %>
+
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       bedroom_path(bedroom), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -37,6 +40,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
+                      <% end %>
         </td>
       </tr>
     <% end %>
