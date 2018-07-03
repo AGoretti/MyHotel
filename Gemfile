@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 gem 'sqlite3'
+gem 'will_paginate-bootstrap4'
 gem "paperclip", "~> 6.0.0"
  gem "binding_of_caller"
 gem 'puma', '~> 3.11'

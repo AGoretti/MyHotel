@@ -7,79 +7,20 @@
     <div class="tz-gallery">
 
         <div class="row">
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <a class="lightbox" href="#">
-                    <%=image_tag"fundo.jpg"%>
-                  </a>
-                    <div class="caption">
-                      <h3>Hotel: Demostração</h3>
-                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
-                      <p>Preço: $200</p>
-                      </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <a class="lightbox" href="#">
-                    <%=image_tag"fundo.jpg"%>
-                  </a>
-                    <div class="caption">
-                      <h3>Hotel: Demostração</h3>
-                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
-                      <p>Preço: $200</p>
+           <%(1..6).each do |p|%>
+          <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="#">
+                  <%=image_tag"fundo.jpg"%>
+                </a>
+                  <div class="caption">
+                    <h3>Hotel: Demostração</h3>
+                    <p><b>Descrição:</b> um bom hotel para passar os dias de ferias</p>
+                    <p><b>Preço:</b> $200</p>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <a class="lightbox" href="#">
-                    <%=image_tag"fundo.jpg"%>
-                  </a>
-                    <div class="caption">
-                      <h3>Hotel: Demostração</h3>
-                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
-                      <p>Preço: $200</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <a class="lightbox" href="#">
-                    <%=image_tag"fundo.jpg"%>
-                  </a>
-                    <div class="caption">
-                      <h3>Hotel: Demostração</h3>
-                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
-                      <p>Preço: $200</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <a class="lightbox" href="#">
-                    <%=image_tag"fundo.jpg"%>
-                  </a>
-                    <div class="caption">
-                      <h3>Hotel: Demostração</h3>
-                      <p>Descrição: um bom hotel para passar os dias de ferias</p>
-                      <p>Preço: $200</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="#">
-                      <%=image_tag"fundo.jpg"%>
-                    </a>
-                    <div class="caption">
-                        <h3>Hotel: Demostração</h3>
-                        <p>Descrição: um bom hotel para passar os dias de ferias</p>
-                        <p>Preço: $200</p>
-                    </div>
-                </div>
-            </div>
+              </div>
+          </div>
+          <%end%>
             <% @bedrooms.each do |bedroom| %>
             <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
@@ -87,16 +28,16 @@
                   <%= image_tag bedroom.foto.url %>
                 </a>
                 <div class="caption">
-                    <h3><%= "Hotel: "+ bedroom.hotel.name %></h3>
-                    <p> <%= "Descição: " +bedroom.description %> </p>
-                    <p> <%= "Preço: $"+ bedroom.price.to_s %> </p>
+                    <h3>Hotel: <%= bedroom.hotel.name %></h3>
+                    <p><b>Descição</b><%= bedroom.description %> </p>
+                    <p><b>Preço: $</b> <%=  bedroom.price.to_s %> </p>
 
                 </div>
             </div>
             </div>
             <% end %>
         </div>
-
+            <%= will_paginate @bedrooms, list_classes: %w(pagination justify-content-center) %>
     </div>
 
 </div>
