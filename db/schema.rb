@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_023438) do
+ActiveRecord::Schema.define(version: 2018_07_03_031435) do
 
   create_table "bedrooms", force: :cascade do |t|
     t.string "category"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2018_07_01_023438) do
     t.integer "foto_file_size"
     t.datetime "foto_updated_at"
     t.float "price"
-    t.string "telephone"
     t.index ["hotel_id"], name: "index_bedrooms_on_hotel_id"
   end
 
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_07_01_023438) do
     t.float "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "telephone"
   end
 
   create_table "ratings", force: :cascade do |t|
